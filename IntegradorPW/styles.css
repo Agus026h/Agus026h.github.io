@@ -8,6 +8,8 @@
 
 body{
     background-color: #33ffd7;
+    
+   
 }
 
 .header{
@@ -125,47 +127,85 @@ left: 10px;
   
 }
 
-
-/*
-.contenedor-carrusel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-
-  }
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
   
-  #carrusel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  #carrusel img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-  
-  #nombre-artista {
-    margin-top: 10px;
-    font-size: 18px;
-  }
-  
-  #lista-canciones {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  button {
-    padding: 10px;
-    margin: 0 10px;
-  }
-*/
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
 
 
+.iconos img {
+  max-width: 40px; 
+  margin: 0 10px;
+  border-radius: 50%;
+}
 
+.iconos img:hover {
+ transform: scale(1.2);
+
+
+}
+
+
+.artista {
+  background-color: #ff7f50;
+  margin: 20px auto;
+  max-width: 600px;
+  border-radius: 8px;
+  margin-bottom: 45px;
+  padding: 15px;
+  align-items: center;
+  text-align: center;
+}
+
+.artista img {
+  max-width: 400px;
+  width: 400px; 
+  height: 300px; 
+  object-fit: cover; /*cover corta la imagen*/
+}
+
+.artista p {
+  color: #333333; 
+  font-size: 24px; 
+  line-height: 1.5; 
+  
+  max-width: 500px; 
+  margin: 0 auto;
+}
+
+.canciones{
+   list-style: none;
+
+
+}
+.canciones li{
+  padding: 8px;
+
+
+}
+.artista h2 {
+  color: #333;
+  font-size: 46px;
+}
+
+h3 {
+  margin-top: 10px;
+}
+
+h1{
+
+font-size: 40px;
+margin: 30px;
+text-align: center;
+
+
+}
 
 
 
