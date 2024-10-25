@@ -1,24 +1,34 @@
-// Array de imágenes
+// Array de imágenes y enlaces
 const imagenes = [
-  'imagenes/adele.jpg',
-  'imagenes/ariana grande.jpg',
-  'imagenes/LadyGaga.jpg',
-  'imagenes/juanes.jpg',
-  
+  { src: 'imagenes/adele.jpg', link: 'pagina2.html#adele' }, 
+  { src: 'imagenes/ariana grande.jpg', link: 'pagina2.html#arianaGrande' }, 
+  { src: 'imagenes/LadyGaga.jpg', link: 'pagina2.html#LadyGaga' }, 
+  { src: 'imagenes/juanes.jpg', link: 'pagina2.html#Juanes' }, 
 ];
 
 const slider = document.querySelector("#slider");
 
-
 function cargarImagenes() {
-  imagenes.forEach((imgSrc) => {
+  imagenes.forEach(function(imgData) {
+    
     let imgDiv = document.createElement('div');
     imgDiv.classList.add('slider-seleccionado');
     
+    
+    let enlace = document.createElement('a');
+    enlace.href = imgData.link;  
+    enlace.target = "_blank";    
+    
+  
     let img = document.createElement('img');
-    img.src = imgSrc;
-    imgDiv.appendChild(img);
-
+    img.src = imgData.src;       
+    
+   
+    enlace.appendChild(img);
+    
+    imgDiv.appendChild(enlace);
+    
+    
     slider.appendChild(imgDiv);
   });
 }
@@ -30,10 +40,8 @@ cargarImagenes();
 let sliderSeleccionado = document.querySelectorAll(".slider-seleccionado");
 let ultimoSlider = sliderSeleccionado[sliderSeleccionado.length - 1];
 
-
 const botonIzq = document.querySelector("#b-izquierda");
 const botonDer = document.querySelector("#b-derecha");
-
 
 slider.insertAdjacentElement('afterbegin', ultimoSlider);
 
@@ -62,11 +70,9 @@ function Anterior() {
   }, 1000);
 }
 
-
 setInterval(function() {
   Siguiente();
 }, 3000);
-
 
 botonDer.addEventListener('click', function() {
   Siguiente();
