@@ -72,7 +72,7 @@ function Anterior() {
 
 setInterval(function() {
   Siguiente();
-}, 3000);
+}, 6000);
 
 botonDer.addEventListener('click', function() {
   Siguiente();
