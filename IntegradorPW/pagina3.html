@@ -3,10 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contacto</title>
+     
+    <style>
+
+#f{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+
+    border-width: 1px 5px 5px 1px;
+    border-style: outset;
+    border-color:  black;
+    border-radius: 10px;
+    background-color: rgb(129, 78, 145);
+    padding: 25px;
+    width: 300px;
+    height: 150px;
+}
+.in{
+
+    text-align: end;
+border-radius: 5px;
+    background-color: aliceblue;
+    height: 20px;
+margin-right: 10px;
+
+
+
+
+
+}
+.nav{
+    position: absolute;
+    background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;  
+    
+  
+}
+
+    </style>
 </head>
-<body>
-    <h1>Pagina 3</h1>
-    <a href="paginappal.html">Volver</a> 
+<body >
+    <header class="header">
+        <div class="logo">
+       <img src="imagenes/musicaLogo.png" alt="Logo Musica">  
+    </div>
+
+          <div class="nav" >
+        
+            <div>
+              <a href="paginappal.html">Pagina principal</a><br><br>
+              <a href="pagina2.html">Contenido</a>
+            </div>
+
+</div>
+         <div id="f">
+           <form action="">
+<label for="nombre" class="lb">Nombre completo:</label><br>
+<input type="text" class="in" name="nombre"><br>
+<label for="numero" class="lb">Número de telefono:</label><br>
+<input type="number" class="in" name="numero"><br>
+<label for="mail" class="lb">Mail:</label><br>
+<input type="mail" class="in" name="mail">
+<input type="submit"    class="lb"  value="Enviar">
+    </form>
+
+    </div>
+     
 </body>
+
 </html>
