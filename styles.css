@@ -7,7 +7,7 @@
 }
 
 body{
-    background-color: #33ffd7;
+  background-color: #33ffd7;
     padding-bottom: 40px;
    
 }
@@ -130,19 +130,23 @@ left: 10px;
 footer {
   background-color: #333;
   color: #fff;
-  text-align: center;
-  
-  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
   position: fixed;
   width: 100%;
   bottom: 0;
 }
 
 
+
 .iconos img {
+  
   max-width: 40px; 
   margin: 0 10px;
   border-radius: 50%;
+  
 }
 
 .iconos img:hover {
@@ -279,4 +283,23 @@ height: 200px;
 }
 
 
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
 
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-links a:hover {
+  color: #ccc;
+}
+
+.footer-copy {
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+}

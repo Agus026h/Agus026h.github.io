@@ -67,17 +67,44 @@ margin-right: 10px;
 
 </div>
          <div id="f">
-           <form action="">
+           <form action="" autocomplete="off" novalidate onsubmit="return validar()">
 <label for="nombre" class="lb">Nombre completo:</label><br>
-<input type="text" class="in" name="nombre"><br>
-<label for="numero" class="lb">Número de telefono:</label><br>
-<input type="number" class="in" name="numero"><br>
+<input type="text" class="in" id="nm" name="nombre" onfocus="limpiarinput()"><span style="display: none;" id="error1" >Input inválido</span>
+<label for="numero" class="lb" >Número de telefono:</label><br>
+<input type="number" class="in" id="tl" name="numero" onfocus="limpiarinput()"><span style="display: none;" id="error2" >Input inválido</span>
 <label for="mail" class="lb">Mail:</label><br>
-<input type="mail" class="in" name="mail">
+<input type="mail" class="in" id="ml" name="mail" onfocus="limpiarinput()"><span style="display: none;" id="error3" >Input inválido</span>
 <input type="submit"    class="lb"  value="Enviar">
     </form>
 
     </div>
+    <script>
+        function validar(){
+let fagerror=false;
+
+        let nm=document.getElementById(nm)
+        let pattern=/^[0-9]{10}$/
+        let tl= document.getElementById(tl)
+        let res=pattern.test(tl)
+        let ml=document.getElementById(ml)
+        let mailpattern=/^\w@\w\.(com)$/
+        let res1=mailpattern.test(ml)
+if(nm.value="" || nm.value<50){
+    document.getElementById('error1')
+}
+if(res.value=false ){
+    document.getElementById('error1')
+}
+if(res.value=false){
+    document.getElementById('error1')
+}      
+        }
+        function limpiarinput(e){
+let spanError=e.target.nextsibling
+
+        }
+        
+            </script>
      
 </body>
 
