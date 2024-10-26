@@ -1,11 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Integrador</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Wenaasasdasd</h1>
+   <header class="header">
+    <div class="logo">
+   <img src="imagenes/musicaLogo.png" alt="Logo Musica">
+     
+      </div>
+   <nav>
+     
+    <ul class="nav-links">
+     <li> <a href="index.html">Pagina principal</a></li>
+     <li><a href="pagina2.html">Discografia</a></li>
+     <li><a href="pagina3.html">cuestionario</a></li>
+
+
+    </ul> 
+
+
+   </nav>
+    </header>
+      
+
+
+    <div class="titulo-p">
+      <h1>Bienvenido a ArtistasPop.com conoce a tus cantantes favoritos temas y mucho más...</h1>
+
+    </div>
+
+
+
+     <div class="carrusel-slider"> 
+     <div class="slider" id="slider">
+        
+
+
+
+     </div>
+     <div class="slider-boton slider-b-derecha" id="b-derecha">></div>
+     <div class="slider-boton slider-b-izquierda" id="b-izquierda"> &#60; </div>
+
+
+     </div>
+   <h2>Escucha las mejores canciones de tus artistas preferidos, tambien puedes ver sus proximas giras, y sugerir mas artistas!</h2>
+    
+   <h1>Proximas Giras:</h1>
+   <div class="giras">
+       <div class="gira">
+           <img src="imagenes/New_York_City-scaled.jpg" alt="Nueva York">
+           <h3>Gira de Lady Gaga</h3>
+           <p>Proxima fecha: 28 de octubre, 2024 - Nueva York, EE.UU.</p>
+           <p>Mas fechas en: Los Angeles, Chicago, Miami.</p>
+       </div>
+       <div class="gira">
+           <img src="imagenes/Londres.jpg" alt="Londres">
+           <h3>Gira de Adele</h3>
+           <p>Proxima fecha: 20 de noviembre, 2024 - Londres, Reino Unido</p>
+           <p>Mas fechas en: París, Berlín, Amsterdam.</p>
+       </div>
+       
+       <div class="gira">
+           <img src="imagenes/buenos-aires.jpg" alt="Buenos Aires">
+           <h3>Gira de Juanes</h3>
+           <p>Próxima fecha: 6 de diciembre, 2024 - Buenos Aires, Argentina</p>
+           <p>Mas fechas en: Bogota, Santiago.</p>
+       </div>
+       <div class="gira">
+           <img src="imagenes/Los-Angeles.png" alt="Los Angeles">
+           <h3>Gira de Ariana Grande</h3>
+           <p>Proxima fecha: 28 de noviembre, 2024 - Los Angeles, EE.UU.</p>
+           <p>Mas fechas en: San Francisco, Las Vegas, Seattle.</p>
+       </div>
+   </div> 
+
+   <h1>Escucha la nueva cancion de cada artista</h1>
+   <div class="ultimas-canciones">
+      <div class="cancion">
+          <h3>Lady Gaga</h3>
+          <p>Disease</p>
+          <audio controls src="audios/Lady-Gaga-Decease.mp3"></audio>
+      </div>
+      <div class="cancion">
+          <h3>Adele</h3>
+          <p>Oh my God</p>
+          <audio controls src="audios/Adele-cancion.mp3"></audio>
+      </div>
+      <div class="cancion">
+          <h3>Juanes</h3>
+          <p>Nacimos solos</p>
+          <audio controls src="audios/Juanes-Nacimos-solos.mp3"></audio>
+      </div>
+      <div class="cancion">
+          <h3>Ariana Grande</h3>
+          <p>We cant be friends</p>
+          <audio controls src="audios/Ariana-cancion.mp3"></audio>
+      </div>
+  </div>
+   
+    
+
+  <script src="script.js"></script>
+
+ <footer><div class="iconos">
+      <a href="https://www.instagram.com" target="_blank">
+         <img src="imagenes/instaa.png" alt="Instagram">
+     </a>
+     <a href="https://www.facebook.com" target="_blank">
+         <img src="imagenes/facebook.png" alt="Facebook">
+     </a>
+     <a href="https://www.twitter.com" target="_blank">
+         <img src="imagenes/twitter.png" alt="Twitter">
+     </a>
+   </div>
+   
+ </footer>
+
+
+   
 </body>
 </html>
