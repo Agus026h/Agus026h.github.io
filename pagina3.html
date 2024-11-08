@@ -3,189 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-     
-    <style>
-        
-
-
-
-
-#f{
-
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    border-width: 1px 5px 5px 1px;
-    border-style: outset;
-    border-color:  black;
-    border-radius: 10px;
-    background-color: rgb(129, 78, 145);
-    padding: 25px;
-    width: 300px;
-    height: 300px;
-}
-.in{
-
-    text-align: end;
-border-radius: 5px;
-    background-color: aliceblue;
-    height: 20px;
-margin-right: 10px;
-
-}
-
-
-.nav{
-    position: absolute;
-    background-color: #04AA6D;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;  
-    
-  
-}
-.header{
-
-height: 80px;
-padding: 5px 10%;
-background-color: #1b3039;
-display: flex;
-justify-content: space-between;
-align-items: center;
-box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Nunito', sans-serif;
-  font-size: 20px;
-}
-
-
-.header .logo img{
-
-height: 70px;
-width: auto;
-
-
-}
-
-
-.header .nav-links{
-
-list-style: none;
-
-
-}
-
-
-.header .nav-links li{
-display:inline-block ;
-padding: 0 40px;
-}
-
-.header .nav-links a{
-
-text-decoration:  none;
-
-font-size: 600;
-color: antiquewhite;
-
-}
-
-
-.header .nav-links li:hover{
-transform: scale(1.2);
-
-
-
-}
-    </style>
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body >
+<body>
     <header class="header">
         <div class="logo">
-       <img src="imagenes/musicaLogo.png" alt="Logo Musica">
-         
-          </div>
-       <nav>
-         
-        <ul class="nav-links">
-         <li> <a href="index.html">Pagina principal</a></li>
-         <li><a href="pagina2.html">Discografia</a></li>
-         <li><a href="pagina3.html">Contactanos</a></li>
-    
-    
-        </ul> 
-    
-    
-       </nav>
-        </header>
-         <div id="f">
-           <form action="" autocomplete="off" novalidate onsubmit="return validar()">
-<label for="nombre" class="lb">Nombre completo:</label><br>
-<input type="text" class="in" id="nm" name="nombre" onfocus="limpiarinput()"><span style="display: none;" id="error1" >Input inválido</span><br>
-<label for="numero" class="lb" >Número de telefono:</label><br>
-<input type="number" class="in" id="tl" name="numero" onfocus="limpiarinput()"><span style="display: none;" id="error2" >Input inválido</span><br>
-<label for="mail" class="lb">Mail:</label><br>
-<input type="mail" class="in" id="ml" name="mail" onfocus="limpiarinput()"><span style="display: none;" id="error3" >Input inválido</span><br>
-<label for="artista" class="lb">Artista favorito:</label><br>
-<input type="text" class="in" id="af" name="artista" onfocus="limpiarinput()"><span style="display: none;" id="error3" >Input inválido</span><br>
+            <img src="imagenes/musicaLogo.png" alt="Logo Musica">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li> <a href="index.html">Pagina principal</a></li>
+                <li><a href="pagina2.html">Discografia</a></li>
+                <li><a href="pagina3.html">Contactanos</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<input type="submit"    class="lb" id="sb"  value="Enviar">
+
+    <form id="formulario-contacto">
+        <h2>Formulario de Contacto</h2>
+        
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+        <div id="error-nombre" class="mensaje-error"></div>
+
+        <label for="correo">Correo Electronico (opcional):</label>
+        <input type="text" id="correo" name="correo">
+        <div id="error-correo" class="mensaje-error"></div>
+
+        <label for="telefono">Telefono (opcional):</label>
+        <input type="tel" id="telefono" name="telefono">
+        <div id="error-telefono" class="mensaje-error"></div>
+
+        <label for="artista-favorito">Artista Favorito:</label>
+        <input type="text" id="artista-favorito" name="artista-favorito">
+        <div id="error-artista" class="mensaje-error"></div>
+
+        <label for="cancion-favorita">Cancion Favorita:</label>
+        <input type="text" id="cancion-favorita" name="cancion-favorita">
+        <div id="error-cancion" class="mensaje-error"></div>
+
+        <button type="submit">Enviar</button>
     </form>
 
-    </div>
-    <div id="resultado">
+    <div id="mensaje-resultado" class="mensaje-resultado"></div>
 
-    </div>
+
+
     <script>
-        function validar(){
-let flagerror=false;
+        document.getElementById("formulario-contacto").addEventListener("submit", function(event) {
+            event.preventDefault();  
 
-        let nm=document.getElementById('nm')
-        let pattern=/^[0-9]{10}$/
-        let tl= document.getElementById('tl')
-        let res=pattern.test(tl)
-        let ml=document.getElementById('ml')
-        let mailpattern=/^\w@\w\.(com)$/
-        let res1=mailpattern.test(ml)
-        let af=document.getElementById('af')
-if(nm.value="" || nm.value<50){
-    document.getElementById('error1').style.display=block;
-    flagerror=true;
-}
-if(res.value=false ){
-    document.getElementById('error2').style.display=block;
-    flagerror=true;
-}
-if(res.value=false){
-    document.getElementById('error3').style.display=block;
-    flagerror=true;
-}  
+            const nombre = document.getElementById("nombre").value;
+            const correo = document.getElementById("correo").value;
+            const telefono = document.getElementById("telefono").value;
+            const artistaFavorito = document.getElementById("artista-favorito").value;
+            const cancionFavorita = document.getElementById("cancion-favorita").value;
 
-if(!flagerror){
-    let res= document.getElementById('resultado')
-    let text=document.createElement('h1')
-    text.innerHTML='los datos de ${nm.value} han sido ingresados con éxito'
-     res.appendChild(text)
-     res.style.display='block';
+            document.querySelectorAll(".mensaje-error").forEach(function(element) {
+                element.style.display = "none";
+                element.innerText = "";
+            });
 
-} 
+            let errores = 0;
 
-        }
-        function limpiarinput(e){
-let spanError=e.target.nextsibling
+            if (nombre.length < 2 || nombre.length > 30) {
+                document.getElementById("error-nombre").innerText = "El nombre debe tener entre 2 y 30 caracteres.";
+                document.getElementById("error-nombre").style.display = "block";
+                errores++;
+            }
 
-        }
-        
-            </script>
-     
-</body>
+            if (correo && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) {
+                document.getElementById("error-correo").innerText = "Correo invalido.";
+                document.getElementById("error-correo").style.display = "block";
+                errores++;
+            }
 
-</html>
+            if (telefono && !/^\d{10}$/.test(telefono)) { 
+                document.getElementById("error-telefono").innerText = "Telefono invalido. Debe tener 10 digitos.";
+                document.getElementById("error-telefono").style.display = "block";
+                errores++;
+            }
+
+            if (artistaFavorito.trim() === "") {
+                document.getElementById("error-artista").innerText = "Este campo no puede estar vacio.";
+                document.getElementById("error-artista").style.display = "block";
+                errores++;
+            }
+
+            if (cancionFavorita.trim() === "") {
+                document.getElementById("error-cancion").innerText = "Este campo no puede estar vacio.";
+                document.getElementById("error-cancion").style.display = "block";
+                errores++;
+            }
+
+            if (errores === 0) {
+                const mensajeResultado = document.getElementById("mensaje-resultado");
+                mensajeResultado.innerHTML = ""; 
+
+              
+                const mensajeEncabezado = document.createElement("p");
+                mensajeEncabezado.innerHTML = "<strong>Se ha enviado la siguente respuesta:</strong>";
+                mensajeResultado.appendChild(mensajeEncabezado);
+
+                const datos = [
+                    { label: "Nombre", value: nombre },
+                    { label: "Correo", value: correo || "No proporcionado" },
+                    { label: "Teléfono", value: telefono || "No proporcionado" },
+                    { label: "Artista Favorito", value: artistaFavorito },
+                    { label: "Canción Favorita", value: cancionFavorita }
+                ];
+
+                datos.forEach(function(dato) {
+                    const parrafo = document.createElement("p");
+                    parrafo.innerHTML = `<strong>${dato.label}:</strong> ${dato.value}`;
+                    mensajeResultado.appendChild(parrafo);
+                });
+
+                mensajeResultado.style.display = "block";
+            } else {
+                document.getElementById("mensaje-resultado").style.display = "none";
+            }
+        });
+    </script>
+
+
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Política de Privacidad</a>
+            <a href="#">Términos y Condiciones</a>
+            <a href="#">Contacto</a>
+            <a href="#">Ayuda</a>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2024 ArtistasPop.com Todos los derechos reservados.</p>
+        </div>
+        <div class="iconos">
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="imagenes/instaa.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="imagenes/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+                <img src="imagenes/twitter.png" alt="Twitter">
+            </a>
+        </div>
